@@ -70,35 +70,42 @@ Intelligence=4
 Snow Cloak
 [s372799@helios ~/OPD/lab0]$ cat tranquill9
 Тип покемона  NORMAL FLYING
-[s372799@helios ~/OPD/lab0]$ chmod 571 beautifly3
+[s372799@helios ~/OPD/lab0]$ chmod u+rx beautifly3
+[s372799@helios ~/OPD/lab0]$ chmod g+rwx beautifly3
+[s372799@helios ~/OPD/lab0]$ chmod o+x beautifly3 
 [s372799@helios ~/OPD/lab0]$ cd beautifly3
 [s372799@helios ~/OPD/lab0]$ chmod 752 scraggy
 [s372799@helios ~/OPD/lab0]$ chmod 571 kingdra
 [s372799@helios ~/OPD/lab0]$ chmod 664 floatzel
 [s372799@helios ~/OPD/lab0]$ chmod 046 loudred
 [s372799@helios ~/OPD/lab0]$ cd -
-[s372799@helios ~/OPD/lab0]$ chmod 537 dratini7
+[s372799@helios ~/OPD/lab0]$ chmod u+rx dratini7
+[s372799@helios ~/OPD/lab0]$ chmod g+wx dratini7
+[s372799@helios ~/OPD/lab0]$ chmod o+rwx dratini7
 [s372799@helios ~/OPD/lab0]$ cd dratini7
 [s372799@helios ~/OPD/lab0]$ chmod 724 charizard
 [s372799@helios ~/OPD/lab0]$ chmod 551 wurmple
 [s372799@helios ~/OPD/lab0]$ chmod 044 unfezant
 [s372799@helios ~/OPD/lab0]$ chmod 777 probopass
 [s372799@helios ~/OPD/lab0]$ chmod 005 aggron
-[s372799@helios ~/OPD/lab0]$ chmod 444 krokorok
-[s372799@helios ~/OPD/lab0]$ chmod 404 krookodile2
+[s372799@helios ~/OPD/lab0]$ chmod a= krokorok
+[s372799@helios ~/OPD/lab0]$ chmod a+r krokorok
+[s372799@helios ~/OPD/lab0]$ cd –
+[s372799@helios ~/OPD/lab0]$ chmod a= krookodile2
+[s372799@helios ~/OPD/lab0]$ chmod uo+r krookodile2
 [s372799@helios ~/OPD/lab0]$ chmod 664 primeape7
-[s372799@helios ~/OPD/lab0]$ cd -
-[s372799@helios ~/OPD/lab0]$ chmod 737 skuntank9
+ [s372799@helios ~/OPD/lab0]$ chmod 737 skuntank9
 [s372799@helios ~/OPD/lab0]$ cd skuntank9
 [s372799@helios ~/OPD/lab0]$ chmod 752 stunky
 [s372799@helios ~/OPD/lab0]$ chmod 312 ekans
-[s372799@helios ~/OPD/lab0]$ chmod 500 fraxure
+[s372799@helios ~/OPD/lab0]$ chmod a= fraxure
+[s372799@helios ~/OPD/lab0]$ chmod u+rx fraxure
 [s372799@helios ~/OPD/lab0]$ chmod 737 marshtomp
 [s372799@helios ~/OPD/lab0]$ chmod 524 tentacruel
 [s372799@helios ~/OPD/lab0]$ chmod 640 swinub
 [s372799@helios ~/OPD/lab0]$ cd -
-[s372799@helios ~/OPD/lab0]$ chmod 066 tranquill9
-. [s372799@helios ~/OPD/lab0]$ ln -s tranquill9 lab0/dratini7/aggrontranquill
+[s372799@helios ~/OPD/lab0]$ chmod go+rw tranquill9 
+[s372799@helios ~/OPD/lab0]$ ln -s tranquill9 lab0/dratini7/aggrontranquill
 ln: lab0/dratini7/aggrontranquill: No such file or directory
 [s372799@helios ~/OPD/lab0]$ cd dratini7
 [s372799@helios ~/OPD/lab0/dratini7]$ touch aggrontranquill
@@ -237,17 +244,15 @@ total 0
 ./skuntank9/tentacruel:
 total 1
 -rwxr-xr-x  1 s372799  studs  28  6 окт.  16:25 krookodile2
-[s372799@helios ~/OPD/lab0]$ wc -l `echo *s */*s` | sort -r
-wc: *s: open: No such file or directory
-wc: Copy_60/probopass: read: Is a directory
-wc: dratini7/probopass: read: Is a directory
-wc: skuntank9/ekans: read: Is a directory
-       0 total
+ls -lR |grep s$|wc -l|sort -r
+ls: ./skuntank9/ekans: Permission denied
+       2 
 [s372799@helios ~/OPD/lab0]$ ls -lRrt | grep -l ^t | 2>&1
-[s372799@helios ~/OPD/lab0/beautifly3]$ cat -n floatzel | grep -iv "*e" floatzel | 2> /dev/null
-[s372799@helios ~/OPD/lab0/beautifly3]$ cat -n loudred | grep -iv "*e" loudred | 2> /dev/null
+[s372799@helios ~/OPD/lab0/beautifly3]$ ls -lR|cat -n *|grep -i e$|2>/dev/null
+cat: kingdra: Is a directory
+cat: scraggy: Is a directory 
      1  Способности  Uproar
-[s372799@helios ~/OPD/lab0]$ wc -m beautifly3/floatzel beautifly3/loudred dratini7/charizard dratini7/unfezant dratini7/aggron dratini7/krokorok | sort -n
+[s372799@helios ~/OPD/lab0]$ wc -m beautifly3/* dratini7/unfezant dratini7/aggron dratini7/krokorok | sort -n
       21 dratini7/krokorok
       22 dratini7/aggron
       24 dratini7/unfezant
@@ -255,13 +260,12 @@ wc: skuntank9/ekans: read: Is a directory
      100 dratini7/charizard
      110 beautifly3/loudred
      368 total
-[s372799@helios ~/OPD/lab0/beautifly3]$ tail -c 4 `echo s* */s*` |sort -n -t"/" -k3 -k1 -k2 | 2>/tmp/s372799_log
-tail: scraggy: Is a directory
-tail: */s*: No such file or directory [s372799@helios ~/OPD/lab0/beautifly3]$ wc -m floatzel loudred | 0>/tmp/s372799_log
-[s372799@helios /tmp]$ cat s372799_log
-     110 loudred
-      90 floatzel
-     200 total
+[s372799@helios ~/OPD/lab0]$ ls -ltRr | grep ":[0-9][0-9] s" | tail -4 | 2>/tmp/s372799_log
+drwxr-x-w-  2 s372799  studs    2 19 окт.  17:24 scraggy
+drwxr-x-w-  2 s372799  studs   2 19 окт.  17:26 stunky
+-rw-r-----  1 s372799  studs  70 19 окт.  18:00 swinub
+drwxr-x---  2 s372799  studs    2 19 окт.  18:33 scraggy 
+[s372799@helios ~/OPD/lab0/beautifly3]$ wc -m floatzel loudred | 0>/tmp/s372799_log
 [s372799@helios ~/OPD/lab0]$ rm krookodile2
 [s372799@helios ~/OPD/lab0]$ rm dratini7/unfezant
 [s372799@helios ~/OPD/lab0]$ rm `echo Copy_*`
